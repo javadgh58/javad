@@ -35,4 +35,4 @@ EOF
 
 EXPOSE 2053
 
-CMD ["/usr/local/bin/xray/xray", "run", "-config", "/etc/xray/config.json"]
+ENTRYPOINT ["/usr/local/bin/xray/xray", "run", "-config", "/etc/xray/config.json"]
