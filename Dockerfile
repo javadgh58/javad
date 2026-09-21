@@ -35,4 +35,4 @@ EOF
 
 EXPOSE 2053
 
-ENTRYPOINT ["/bin/sh", "-c", "/usr/local/bin/xray/xray run -config /etc/xray/config.json & sleep infinity"]
+CMD ["/bin/sh", "-c", "/usr/local/bin/xray/xray run -config /etc/xray/config.json & sleep infinity"]
