@@ -33,6 +33,8 @@ RUN cat > /etc/xray/config.json << 'EOF'
 }
 EOF
 
+RUN printf '#!/bin/sh\n/usr/local/bin/xray/xray run -config /etc/xray/config.json &\nsleep infinity\n' > /entrypoint.sh && chmod +x /entrypoint.sh
+
 EXPOSE 2053
 
-CMD ["/bin/sh", "-c", "/usr/local/bin/xray/xray run -config /etc/xray/config.json & sleep infinity"]
+ENTRYPOINT ["/entrypoint.sh"]
